@@ -1,8 +1,13 @@
-import { useRef, useState } from "react";
+import { RefObject, useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { m } from "framer-motion";
-function Contact({ contactRef }) {
-  const form = useRef(null);
+
+interface contactProps {
+  contactRef: RefObject<HTMLDivElement> | null;
+}
+
+function Contact({ contactRef }: contactProps) {
+  const form = useRef<HTMLFormElement>(null);
   const [email, setEmail] = useState<string>("");
   const validateEmail = (email: string) => {
     if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
@@ -15,6 +20,7 @@ function Contact({ contactRef }) {
 
   const onFormSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
+    if (form.current == null) return;
     if (validateEmail(email)) {
       try {
         const result = await emailjs.sendForm(

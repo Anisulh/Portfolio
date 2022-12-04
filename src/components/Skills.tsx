@@ -1,5 +1,10 @@
 import { m } from "framer-motion";
-function Skills({ skillsRef }) {
+import { RefObject } from "react";
+interface skillProps {
+  skillsRef: RefObject<HTMLDivElement> | null;
+}
+
+function Skills({ skillsRef }: skillProps) {
   return (
     <m.div
       className="text-gray-100 mx-auto mb-10 max-w-7xl"

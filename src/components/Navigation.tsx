@@ -1,6 +1,14 @@
-import { Fragment } from "react";
+import { FC, Fragment, RefObject } from "react";
 import { Popover, Transition } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+
+interface navProps {
+  workRef: RefObject<HTMLDivElement> | null;
+  aboutRef: RefObject<HTMLDivElement> | null;
+  skillsRef: RefObject<HTMLDivElement> | null;
+  contactRef: RefObject<HTMLDivElement> | null;
+  homeRef: RefObject<HTMLDivElement> | null;
+}
 
 export default function Navigation({
   workRef,
@@ -8,7 +16,7 @@ export default function Navigation({
   skillsRef,
   contactRef,
   homeRef,
-}) {
+}: navProps) {
   const navigation = [
     { name: "Work", ref: workRef },
     { name: "Skills", ref: skillsRef },
@@ -28,7 +36,7 @@ export default function Navigation({
                 <div className="flex w-full items-center justify-between md:w-auto">
                   <a
                     className="cursor-pointer border-2 rounded-lg p-3 text-white border-sky-400 flex items-center hover:bg-white hover:text-sky-500 transition-colors"
-                    onClick={() => homeRef.current.scrollIntoView()}
+                    onClick={() => homeRef?.current?.scrollIntoView()}
                   >
                     <span className="sr-only">Anisul Haque's Profolio</span>
                     AH
@@ -45,7 +53,7 @@ export default function Navigation({
                 {navigation.map((item) => (
                   <a
                     key={item.name}
-                    onClick={() => item.ref.current.scrollIntoView()}
+                    onClick={() => item.ref?.current?.scrollIntoView()}
                     className="font-medium text-gray-200 cursor-pointer link link-underline link-underline-black hover:text-gray-400"
                   >
                     {item.name}
@@ -73,7 +81,7 @@ export default function Navigation({
                   <div>
                     <a
                       className="cursor-pointer border-2 rounded-lg p-3 text-white border-sky-400 flex items-center hover:bg-white hover:text-sky-500 transition-colors"
-                      onClick={() => homeRef.current.scrollIntoView()}
+                      onClick={() => homeRef?.current?.scrollIntoView()}
                     >
                       <span className="sr-only">Anisul Haque's Profolio</span>
                       AH
@@ -90,7 +98,7 @@ export default function Navigation({
                   {navigation.map((item) => (
                     <a
                       key={item.name}
-                      onClick={() => item.ref.current.scrollIntoView()}
+                      onClick={() => item.ref?.current?.scrollIntoView()}
                       className="block link link-underline link-underline-black cursor-pointer rounded-md px-3 py-2 text-base  text-white hover:text-sky-400"
                     >
                       {item.name}

@@ -1,6 +1,11 @@
 import { m } from "framer-motion";
+import { RefObject } from "react";
 
-function About({ aboutRef }) {
+interface aboutProps {
+  aboutRef: RefObject<HTMLDivElement> | null;
+}
+
+function About({ aboutRef }: aboutProps) {
   return (
     <m.div
       className="mx-auto max-w-7xl mb-10"

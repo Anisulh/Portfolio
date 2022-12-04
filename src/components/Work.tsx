@@ -1,6 +1,12 @@
 import { m } from "framer-motion";
+import { RefObject } from "react";
 import { BsGithub } from "react-icons/bs";
 import { HiOutlineExternalLink } from "react-icons/hi";
+
+interface workProps {
+  workRef: RefObject<HTMLDivElement> | null;
+}
+
 const projects = [
   {
     name: "ArcLight Music Sharing",
@@ -45,9 +51,8 @@ const projects = [
     demo: null,
     image: "",
   },
-  
 ];
-function Work({ workRef }) {
+function Work({ workRef }: workProps) {
   return (
     <div className="mt-60 mx-auto max-w-7xl text-gray-100">
       <div ref={workRef} className="text-3xl mx-10 mb-10 font-medium ">

@@ -1,5 +1,13 @@
 import { m } from "framer-motion";
-function Hero({workRef, contactRef, homeRef}) {
+import { RefObject } from "react";
+
+interface workProps {
+  workRef: RefObject<HTMLDivElement> | null;
+  contactRef: RefObject<HTMLDivElement> | null;
+  homeRef: RefObject<HTMLDivElement> | null;
+}
+
+function Hero({ workRef, contactRef, homeRef }: workProps) {
   return (
     <div ref={homeRef}>
       <main className="mx-auto -mt-32 max-w-7xl px-4  sm:px-6  lg:px-8  flex items-center h-screen ">
@@ -20,7 +28,7 @@ function Hero({workRef, contactRef, homeRef}) {
               className="rounded-md shadow"
             >
               <a
-                onClick={() => workRef.current.scrollIntoView()}
+                onClick={() => workRef?.current?.scrollIntoView()}
                 className="flex w-full items-center justify-center rounded-md border border-transparent bg-sky-500 px-8 py-3 text-base font-medium text-white hover:bg-sky-700 md:py-4 md:px-10 md:text-lg"
               >
                 Check Out my Work
@@ -32,7 +40,7 @@ function Hero({workRef, contactRef, homeRef}) {
               className="mt-3 sm:mt-0 sm:ml-5"
             >
               <a
-                onClick={() => contactRef.current.scrollIntoView()}
+                onClick={() => contactRef?.current?.scrollIntoView()}
                 className="flex w-full items-center justify-center rounded-md border border-transparent bg-sky-100 px-8 py-3 text-base font-medium text-sky-700 hover:bg-sky-200 md:py-4 md:px-10 md:text-lg"
               >
                 Contact me

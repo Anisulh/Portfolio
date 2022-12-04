@@ -9,11 +9,11 @@ import Work from "./components/Work";
 import { LazyMotion, domAnimation } from "framer-motion";
 
 function App() {
-  const aboutRef = useRef(null);
-  const workRef = useRef(null);
-  const skillsRef = useRef(null);
-  const contactRef = useRef(null);
-  const homeRef = useRef(null);
+  const aboutRef = useRef<HTMLDivElement | null>(null);
+  const workRef = useRef<HTMLDivElement | null>(null);
+  const skillsRef = useRef<HTMLDivElement | null>(null);
+  const contactRef = useRef<HTMLDivElement | null>(null);
+  const homeRef = useRef<HTMLDivElement | null>(null);
 
   return (
     <LazyMotion features={domAnimation}>
