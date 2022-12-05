@@ -11,7 +11,7 @@ function Socials() {
       >
         <a
           target="_blank"
-          href="#"
+          href="https://github.com/Anisulh"
           className="hover:text-sky-500  text-gray-100"
         >
           <BsGithub size="30" />
@@ -24,7 +24,7 @@ function Socials() {
       >
         <a
           target="_blank"
-          href="#"
+          href="https://www.linkedin.com/in/anisulh/"
           className="hover:text-sky-500 text-gray-100"
         >
           <BsLinkedin size="30" />
