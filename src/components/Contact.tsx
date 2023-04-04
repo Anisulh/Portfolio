@@ -40,7 +40,7 @@ function Contact({ contactRef }: contactProps) {
 
   return (
     <m.div
-      className="text-gray-100 mx-auto max-w-7xl mb-10"
+      className="text-gray-100 mx-auto max-w-7xl mb-10 mt-40 "
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
     >

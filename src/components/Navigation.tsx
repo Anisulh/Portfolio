@@ -4,6 +4,7 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
 interface navProps {
   workRef: RefObject<HTMLDivElement> | null;
+  projectsRef: RefObject<HTMLDivElement> | null;
   aboutRef: RefObject<HTMLDivElement> | null;
   skillsRef: RefObject<HTMLDivElement> | null;
   contactRef: RefObject<HTMLDivElement> | null;
@@ -12,6 +13,7 @@ interface navProps {
 
 export default function Navigation({
   workRef,
+  projectsRef,
   aboutRef,
   skillsRef,
   contactRef,
@@ -19,6 +21,7 @@ export default function Navigation({
 }: navProps) {
   const navigation = [
     { name: "Work", ref: workRef },
+    {name:  "Projects", ref: projectsRef},
     { name: "Skills", ref: skillsRef },
     { name: "About", ref: aboutRef },
     { name: "Contact", ref: contactRef },
