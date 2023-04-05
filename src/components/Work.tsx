@@ -7,9 +7,9 @@ const projects = [
     title: "Software Engineer",
     date: "Mar 2023 - Present",
     achievements: [
-      "Developed and implemented a video conferencing and real-time chat application using the MERN stack, resulting in a seamless communication platform for remote teams and users.",
+      "Developed and implemented a video conferencing and real-time chat application, resulting in a seamless communication platform for remote teams and users.",
       "Decreased initial application load times by nearly 40% by optimizing image formats and lazy loading pages users do not frequently access.",
-      "Utilized Unreal Engine 5 to create digital Metahumans, and integrated them into video conferencing applications, enhancing user experience and engagement.",
+      "Integrated effects using Unreal Engine 5 into video conferencing applications, enhancing user experience and engagement.",
       "Collaborated with teams from 2 divisions to conduct product market research and understand user requirements.",
     ],
   },
@@ -18,7 +18,7 @@ const projects = [
     title: "Software Engineer Intern",
     date: "Jan 2023 - Mar 2023",
     achievements: [
-      "Spearheaded a 3D machine learning prototype using Blender, Three.js, TensorFlow.js, and React that creates a augmented reality filter in place of user's face and tracks facial movements.",
+      "Spearheaded a 3D machine learning prototype using Blender, Three.js, TensorFlow.js, and React.",
       "Implemented 50+ tests for the server to ensure all functionality is retained during any updates and changes.",
       "Enabled the transaction and holding of cryptocurrency using Coinbase Cloud, allowing for the exchange of 30+ cryptocurrencies between users.",
       "Automated Heroku deployments and testing using GitHub Actions upon push to the Main branch, reducing deployment times and increasing repository security.",
