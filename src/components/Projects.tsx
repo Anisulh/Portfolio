@@ -13,12 +13,13 @@ const projects = [
     description:
       "An outfit manager allowing users to track their wardrobe and generate outfits based on user preferences and style recommendations.",
     features: [
-      "Implemented NGINX to serve as both a load balancer and reverse proxy to ensure server load and security remain stable and reliable.",
+      "Engineered cross-platform mobile applications using Flutter for both Android and iOS devices, enhancing user accessibility and expanding reach",
       "Increased security and reliability of the application by adding request limiters preventing DDOS attacks.",
       "Created a web scrapper that collects images and information from a provided link to decrease the time needed for users to add clothes.",
       "Enabled secure authentication pages using Google OAuth and OpenID Connect, enabling multi-factor authentication and protecting user data.",
     ],
     builtWith: "TypeScript, Express.js, Node.js, React, MongoDB, Redis, NGINX",
+    github: "https://github.com/Anisulh/RizmicClient",
     image: "",
   },
   {
@@ -35,35 +36,7 @@ const projects = [
     github: "https://github.com/Anisulh/ArcLight-Music",
     demo: "https://arclight-music-production.up.railway.app/",
     image: "",
-  },
-  {
-    name: "MULTI Productivity Application",
-    description:
-      "Full-stack productivity-based web application with CRUD functionality allowing users to organize tasks in a more straightforward digestible manner.",
-    features: [
-      "Developed a REST API backend using Express.js to handle requests from the client.",
-      "Authentication is handled with  JWT tokens for the user and route authentication. Users can only access specific routes when logged in.",
-      "Utilized MaterialUI components for an eye-pleasing client-side experience.",
-    ],
-    builtWith: "JavaScript, Express.js, React, MongoDB, Redux",
-    github: "https://github.com/Anisulh/MULTI-Productivity-Web-App",
-    demo: "https://multi-productivity.herokuapp.com/",
-    image: "",
-  },
-  {
-    name: "ZESTY Real-Estate Marketplace",
-    description:
-      "A web application that allows users to look at listing for their new potential homes and allows property owners to create, update and delete their property listings",
-    features: [
-      "Users can view all available listings and are authenticated using Firebase Authenticator.",
-      "Utilized Google Maps API and Geolocation API to display listing location and nearby places.",
-      "Styled with MaterialUI",
-    ],
-    builtWith: "JavaScript, React,  Firebase",
-    github: "https://github.com/Anisulh/Zesty-Real-Estate-Marketplace",
-    demo: null,
-    image: "",
-  },
+  }
 ];
 function Projects({ projectsRef }: workProps) {
   return (
