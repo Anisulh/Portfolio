@@ -3,26 +3,29 @@ import { RefObject } from "react";
 
 const projects = [
   {
-    name: "GoBeyond Labs",
+    name: "GoBeyond",
     title: "Software Engineer",
-    date: "Mar 2023 - Present",
+    date: "Jan 2023 - Present",
     achievements: [
-      "Developed and implemented a video conferencing and real-time chat application, resulting in a seamless communication platform for remote teams and users.",
-      "Decreased initial application load times by nearly 40% by optimizing image formats and lazy loading pages users do not frequently access.",
-      "Integrated effects using Unreal Engine 5 into video conferencing applications, enhancing user experience and engagement.",
-      "Collaborated with teams from 2 divisions to conduct product market research and understand user requirements.",
+      "Decreased initial React application load times by 40+% by optimizing image formats and lazy loading pages users do not frequently access.",
+      "Designed mockups using Figma and transitioned the client-side styling from CSS to Tailwind CSS, removing excess files.",
+      "Led a team of interns on data collection, adeptly guiding them in the process of filtering and refining datasets using Python to ensure data quality and integrity.",
+      "Spearheaded the seamless migration of the legacy infrastructure to Amazon Web Services (AWS), bolstering scalability, performance, and reliability.",
+      "Implemented 50+ tests  for the Express.js server using Jest to ensure all functionality is retained during any updates and changes.",
+      "Automated Heroku deployments and testing using GitHub Actions, reducing deployment time.",
     ],
   },
   {
-    name: "Research Foundation of CUNY",
-    title: "Software Engineer Intern",
+    name: "United Tech",
+    title: "Fullstack Consultant",
     date: "Jan 2023 - Mar 2023",
     achievements: [
-      "Spearheaded a 3D machine learning prototype using Blender, Three.js, TensorFlow.js, and React.",
-      "Implemented 50+ tests for the server to ensure all functionality is retained during any updates and changes.",
-      "Enabled the transaction and holding of cryptocurrency using Coinbase Cloud, allowing for the exchange of 30+ cryptocurrencies between users.",
-      "Automated Heroku deployments and testing using GitHub Actions upon push to the Main branch, reducing deployment times and increasing repository security.",
-      "Designed mockups using Figma and transitioned the client-side styling from CSS to Tailwind CSS, removing excess files.",
+      "Developed and implemented a video conferencing and real-time chat application using Angular, resulting in a seamless communication platform for remote teams and users.",
+      "Enabled the transaction and holding of cryptocurrency on a project using Coinbase Cloud, allowing for the exchange of 30+ cryptocurrencies between users.",
+      "Implemented robust security for authentication pages leveraging Google OAuth and OpenID Connect, facilitating multi-factor authentication and safeguarding user information.",
+      "Led interns to architect 5+ scalable microservices, facilitating a more robust and modular system architecture.",
+      "Crafted 50+ pages of comprehensive and insightful technical documentation, fortifying the knowledge base and contributing to seamless knowledge transfer and maintenance.",
+      "Automated clerical tasks using Python scripts, allowing for the development team to focus on feature requests",
     ],
   },
 ];
