@@ -3,7 +3,7 @@ import { m } from "framer-motion";
 
 function Socials() {
   return (
-    <div className="fixed sm:left-10 bottom-10 right-10 flex  sm:block">
+    <div className="fixed sm:left-10 bottom-10 right-10 flex w-fit  sm:block">
       <m.button
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
