@@ -1,6 +1,7 @@
-import { RefObject, useRef, useState } from "react";
+import { ChangeEvent, RefObject, useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { m } from "framer-motion";
+import Modal from "./Modal";
 
 interface contactProps {
   contactRef: RefObject<HTMLDivElement> | null;
@@ -8,6 +9,7 @@ interface contactProps {
 
 function Contact({ contactRef }: contactProps) {
   const form = useRef<HTMLFormElement>(null);
+  const [open, setOpen] = useState<boolean>(false);
   const [email, setEmail] = useState<string>("");
   const validateEmail = (email: string) => {
     if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
@@ -18,7 +20,7 @@ function Contact({ contactRef }: contactProps) {
     }
   };
 
-  const onFormSubmit = async (e: { preventDefault: () => void }) => {
+  const onFormSubmit = async (e: ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (form.current == null) return;
     if (validateEmail(email)) {
@@ -29,7 +31,7 @@ function Contact({ contactRef }: contactProps) {
           form.current,
           import.meta.env.VITE_PUBLIC_KEY
         );
-        alert("Success! I will be in contact with you soon.");
+        setOpen(true);
         console.log(result);
       } catch (error) {
         alert("Oh no, something went wrong!");
@@ -76,13 +78,14 @@ function Contact({ contactRef }: contactProps) {
           <div>
             <button
               type="submit"
-              className="flex  items-center justify-center rounded-md border border-transparent bg-sky-500 px-3 py-1 text-base font-medium text-white hover:bg-sky-700"
+              className="flex items-center justify-center rounded-md border border-transparent bg-sky-500 px-3 py-1 text-base font-medium text-white hover:bg-sky-700"
             >
               Submit
             </button>
           </div>
         </form>
       </div>
+      <Modal open={open} setOpen={setOpen} />
     </m.div>
   );
 }
