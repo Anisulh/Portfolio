@@ -18,7 +18,7 @@ const projects = [
       "Created a web scrapper that collects images and information from a provided link to decrease the time needed for users to add clothes.",
       "Enabled secure authentication pages using Google OAuth and OpenID Connect, enabling multi-factor authentication and protecting user data.",
     ],
-    builtWith: "TypeScript, Express.js, Node.js, React, MongoDB, Redis, NGINX",
+    builtWith: "TypeScript, Express.js, Node.js, React, MongoDB, Redis, Flutter",
     github: "https://github.com/Anisulh/RizmicClient",
     image: "",
   },
@@ -32,7 +32,7 @@ const projects = [
       "Designed a UI with Tailwind CSS to provide a simple and direct user experience.",
       "Implemented chat functionality in rooms using Django Channels and Websockets",
     ],
-    builtWith: "Python, Django, JavaScript, React, sqLite3, Redis",
+    builtWith: "Python, Django, JavaScript, React, MySQL, Redis",
     github: "https://github.com/Anisulh/ArcLight-Music",
     demo: "https://arclight-music-production.up.railway.app/",
     image: "",
@@ -92,10 +92,10 @@ function Projects({ projectsRef }: workProps) {
                 )}
               </div>
               <h4 className="font-medium text-lg">Features</h4>
-              <ul>
+              <ul className="list-disc pl-10">
                 {project?.features.map((feature, index) => {
                   return (
-                    <li key={index} className=" text-gray-300 pl-6 pb-2">
+                    <li key={index} className=" text-gray-300  pb-2">
                       {feature}
                     </li>
                   );
@@ -103,7 +103,7 @@ function Projects({ projectsRef }: workProps) {
               </ul>
               <div>
                 <h4 className="font-medium text-lg">Built With:</h4>
-                <p className="pl-6 pb-2 text-gray-300 ">{project.builtWith}</p>
+                <p className="pl-10 pb-2 text-gray-300 ">{project.builtWith}</p>
               </div>
             </div>
           </m.div>
