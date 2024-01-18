@@ -42,12 +42,12 @@ function Contact({ contactRef }: contactProps) {
 
   return (
     <m.div
-      className="text-gray-100 mx-auto max-w-7xl mb-10 mt-40 "
+      className="mb-10 mt-40 "
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
     >
-      <div ref={contactRef} className="mx-10">
-        <h4 className="text-3xl mb-10 font-medium ">Contact</h4>
+      <div ref={contactRef} >
+        <h4 className="text-3xl mb-10 font-bold">Contact</h4>
         <form ref={form} onSubmit={onFormSubmit} className="max-w-2xl">
           <div>
             <input

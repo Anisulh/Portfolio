@@ -1,6 +1,8 @@
 import { m } from "framer-motion";
 import { RefObject } from "react";
 
+
+
 interface workProps {
   workRef: RefObject<HTMLDivElement> | null;
   contactRef: RefObject<HTMLDivElement> | null;
@@ -48,6 +50,7 @@ function Hero({ workRef, contactRef, homeRef }: workProps) {
             </m.button>
           </div>
         </div>
+    
       </main>
     </div>
   );
