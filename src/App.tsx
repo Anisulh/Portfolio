@@ -5,9 +5,9 @@ import Hero from "./components/Hero";
 import Navigation from "./components/Navigation";
 import Skills from "./components/Skills";
 import Socials from "./components/Socials";
-import Projects from "./components/Projects";
+import Projects from "./components/Projects/Projects";
 import { LazyMotion, domAnimation } from "framer-motion";
-import Work from "./components/Work";
+import Work from "./components/WorkExperiance/Work";
 
 function App() {
   const aboutRef = useRef<HTMLDivElement | null>(null);
@@ -19,7 +19,7 @@ function App() {
 
   return (
     <LazyMotion features={domAnimation}>
-      <div className="relative overflow-hidden mb-20">
+      <div className="relative overflow-hidden mb-20 mx-auto max-w-7xl text-gray-100">
         <Navigation
           workRef={workRef}
           aboutRef={aboutRef}
