@@ -25,7 +25,7 @@ function Hero({ workRef, contactRef, homeRef }: workProps) {
             <m.button
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
-              className="rounded-md shadow"
+              className="rounded-md shadow-sm"
             >
               <a
                 onClick={() => workRef?.current?.scrollIntoView()}

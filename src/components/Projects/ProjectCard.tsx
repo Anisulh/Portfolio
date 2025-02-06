@@ -9,9 +9,6 @@ function ProjectCard({ project }: { project: Iproject }) {
       <div className="w-full">
         <h3 className="text-xl font-medium mb-5">{project.name}</h3>
         <p className="pb-2 text-gray-300 ">{project.description}</p>
-        <div className="flex justify-center items-center md:hidden">
-          {project.image}
-        </div>
         <div className=" inline-flex py-6 w-full justify-center gap-10 ">
           {project.github && (
             <div className="">
@@ -49,6 +46,10 @@ function ProjectCard({ project }: { project: Iproject }) {
               </m.button>
             </div>
           )}
+        </div>
+
+        <div className="flex justify-center items-center md:hidden">
+          {project.image}
         </div>
         <h4 className="font-medium text-lg">Features</h4>
         <ul className="list-disc pl-10 pb-6">

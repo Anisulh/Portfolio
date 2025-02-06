@@ -26,7 +26,7 @@ const projects: Iproject[] = [
       <img
         width={2432}
         height={1442}
-        className="w-[48rem] max-w-xs rounded-xl  sm:w-[57rem] md:-ml-4 lg:-ml-0 py-4"
+        className="w-[48rem] max-w-xs rounded-xl  sm:w-[57rem] md:-ml-4 lg:-ml-0 py-4 px-2"
         src={ClothingsSectionsPixel8Mock}
       />
     ),
@@ -57,7 +57,6 @@ const projects: Iproject[] = [
     ],
     builtWith: "HTMX, Templ, Go, Fiber, Kafka, and Postgres",
     github: "https://github.com/Anisulh/ArcLight-Music",
-    demo: "https://arclight-music-production.up.railway.app/",
     image: "",
   },
 ];
@@ -88,7 +87,7 @@ function Projects({
                 key={index}
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
-                className="mb-14 border-2 border-gray-200 rounded-xl p-5 h-full"
+                className="mb-14 border-2 border-gray-200 rounded-xl p-4 h-full"
               >
                 <ProjectCard project={project} />
               </m.div>
