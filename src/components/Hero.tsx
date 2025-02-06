@@ -1,8 +1,6 @@
 import { m } from "framer-motion";
 import { RefObject } from "react";
 
-
-
 interface workProps {
   workRef: RefObject<HTMLDivElement> | null;
   contactRef: RefObject<HTMLDivElement> | null;
@@ -12,7 +10,7 @@ interface workProps {
 function Hero({ workRef, contactRef, homeRef }: workProps) {
   return (
     <div ref={homeRef}>
-      <main className="mx-auto -mt-32 max-w-7xl px-4  sm:px-6  lg:px-8  flex items-center h-screen ">
+      <main className="mx-auto -mt-32 max-w-7xl flex items-center h-screen ">
         <div className="sm:text-center lg:text-left text-gray-300">
           <h1 className="text-lg">Hi, my name is</h1>
           <h2 className="text-4xl font-bold tracking-tight text-gray-100 sm:text-5xl md:text-6xl">
@@ -50,7 +48,6 @@ function Hero({ workRef, contactRef, homeRef }: workProps) {
             </m.button>
           </div>
         </div>
-    
       </main>
     </div>
   );

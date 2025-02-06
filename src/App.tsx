@@ -19,7 +19,7 @@ function App() {
 
   return (
     <LazyMotion features={domAnimation}>
-      <div className="relative overflow-hidden mb-20 mx-auto max-w-7xl text-gray-100">
+      <div className="relative overflow-hidden mb-20 mx-auto max-w-7xl text-gray-100 px-4 sm:px-6 lg:px-8">
         <Navigation
           workRef={workRef}
           aboutRef={aboutRef}

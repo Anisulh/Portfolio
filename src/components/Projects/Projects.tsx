@@ -5,6 +5,7 @@ import { Iproject } from "../../types";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import ClothingsSectionsPixel8Mock from "../../images/ClothingSectionsPixel8Mock.webp";
 
 const projects: Iproject[] = [
   {
@@ -20,7 +21,15 @@ const projects: Iproject[] = [
     builtWith:
       "TypeScript, Express.js, Node.js, React, MongoDB, Redis, React Native",
     github: "https://github.com/Anisulh/RizmicClient",
-    image: "",
+    demo: "https://rizmicfits.com/",
+    image: (
+      <img
+        width={2432}
+        height={1442}
+        className="w-[48rem] max-w-xs rounded-xl  sm:w-[57rem] md:-ml-4 lg:-ml-0 py-4"
+        src={ClothingsSectionsPixel8Mock}
+      />
+    ),
   },
   {
     name: "ArcLight Music Sharing",
@@ -33,6 +42,20 @@ const projects: Iproject[] = [
       "Implemented chat functionality in rooms using Django Channels and Websockets",
     ],
     builtWith: "Python, Django, JavaScript, React, MySQL, Redis",
+    github: "https://github.com/Anisulh/ArcLight-Music",
+    demo: "https://arclight-music-production.up.railway.app/",
+    image: "",
+  },
+  {
+    name: "Newsly",
+    description:
+      "A personalized news recommendation engine that allows users to read news articles based on their preferences.",
+    features: [
+      "Designed and developed a news recommendation engine that caters news articles based on user activity (ex. reading, favoriting, saving, etc.)",
+      "Fine-tuned BERT NLP model resulting in 92% content categorization accuracy",
+      "Secured application with JWT and httpOnly cookies, achieving OWASP Top 10 compliance",
+    ],
+    builtWith: "HTMX, Templ, Go, Fiber, Kafka, and Postgres",
     github: "https://github.com/Anisulh/ArcLight-Music",
     demo: "https://arclight-music-production.up.railway.app/",
     image: "",
@@ -53,24 +76,26 @@ function Projects({
     draggable: true,
   };
   return (
-    <div className="mt-40 px-8">
+    <div className="mt-40">
       <div ref={projectsRef} className="text-4xl mb-10 font-bold ">
         Featured Projects
       </div>
-      <Slider {...settings} ref={sliderRef}>
-        {projects.map((project, index) => {
-          return (
-            <m.div
-              key={index}
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              className="mb-14 border-2 border-gray-200 rounded-xl p-5   "
-            >
-              <ProjectCard project={project} />
-            </m.div>
-          );
-        })}
-      </Slider>
+      <div className="px-4">
+        <Slider {...settings} ref={sliderRef}>
+          {projects.map((project, index) => {
+            return (
+              <m.div
+                key={index}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                className="mb-14 border-2 border-gray-200 rounded-xl p-5 h-full"
+              >
+                <ProjectCard project={project} />
+              </m.div>
+            );
+          })}
+        </Slider>
+      </div>
     </div>
   );
 }

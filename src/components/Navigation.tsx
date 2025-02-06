@@ -29,7 +29,7 @@ export default function Navigation({
   return (
     <div className="z-10 pb-8 sm:pb-16 md:pb-20 lg:w-full relative">
       <Popover>
-        <div className="px-4 pt-6 sm:px-6 lg:px-8">
+        <div className="pt-6 ">
           <nav
             className="flex items-center justify-between sm:h-10 "
             aria-label="navigation"

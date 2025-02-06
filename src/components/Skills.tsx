@@ -15,12 +15,12 @@ function Skills({ skillsRef }: skillProps) {
         <h4 className="text-4xl mb-5 font-bold">Skills</h4>
         <h5 className="font-medium text-lg">Programming Languages:</h5>
         <p className=" text-gray-300 pl-6 pb-2">
-          JavaScript, TypeScript, Python, Java, C, HTML, CSS
+          JavaScript, TypeScript, Python, Go, C, HTML, CSS
         </p>
         <h5 className="font-medium text-lg">Frameworks:</h5>
         <p className=" text-gray-300 pl-6 pb-2">
-          React, Angular, Spring Boot, Flutter, Express.js, Django, Flask,
-          MaterialUI, Tailwind CSS
+          React, Express.js, Django, Flask, Tailwind CSS, Node.js, React Native,
+          HTMX
         </p>
         <h5 className="font-medium text-lg">Testing:</h5>
         <p className=" text-gray-300 pl-6 pb-2">
@@ -28,12 +28,12 @@ function Skills({ skillsRef }: skillProps) {
         </p>
         <h5 className="font-medium text-lg">Databases:</h5>
         <p className=" text-gray-300 pl-6 pb-2">
-          MySQL, Postgres, MongoDB, Firebase, Redis
+          MySQL, Postgres, MongoDB, Redis
         </p>
-        <h5 className="font-medium text-lg">Software:</h5>
+        <h5 className="font-medium text-lg">Software / Tools:</h5>
         <p className=" text-gray-300 pl-6 pb-2">
-          AWS, Docker, Jest, GitHub, Git, Postman, Redux, Figma, Node.js,
-          Blender, Linux
+          GCP, Docker, Jest, GitHub, Git, Postman, Redux, Figma, Node.js, Linux,
+          Expo / EAS
         </p>
         <h5 className="font-medium text-lg">Languages</h5>
         <p className=" text-gray-300 pl-6 pb-2">

@@ -53,12 +53,12 @@ function Work({ workRef }: { workRef: RefObject<HTMLDivElement> | null }) {
   };
 
   return (
-    <div className="mt-60 relative px-8">
+    <div className="mt-60 relative">
       <div ref={workRef} className="text-4xl mb-10 font-bold ">
         Work Experiance
       </div>
 
-      <div>
+      <div className="px-4">
         <Slider {...settings} ref={sliderRef}>
           {work.map((experience, index) => (
             <m.div

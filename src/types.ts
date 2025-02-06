@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 export interface Iexperience {
   name: string;
   title: string;
@@ -11,6 +13,7 @@ export interface Iproject {
   features: string[];
   builtWith: string;
   github: string;
-  image: string;
+  image: ReactNode;
   demo?: string;
 }
+
