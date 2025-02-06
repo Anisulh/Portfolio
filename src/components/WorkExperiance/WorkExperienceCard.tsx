@@ -5,17 +5,20 @@ function WorkExperienceCard({ experience }: { experience: Iexperience }) {
     <div className="h-full flex-1">
       <div className="flex justify-between">
         <div>
-          <h3 className="text-xl font-medium">{experience.name}</h3>
+          <h3 className="text-lg md:text-xl font-medium">{experience.name}</h3>
           <p className="pb-8 text-gray-300 ">{experience.title}</p>
         </div>
-        <p>{experience.date}</p>
+        <p className="text-sm md:text-base text-right">{experience.date}</p>
       </div>
 
-      <h4 className="font-medium text-lg">Achievements</h4>
+      <h4 className="font-medium md:text-lg">Achievements</h4>
       <ul className="list-disc pl-10 ">
         {experience?.achievements.map((feature, index) => {
           return (
-            <li key={index} className=" text-gray-300 pb-2">
+            <li
+              key={index}
+              className=" text-gray-300 pb-2 text-sm md:text-base"
+            >
               {feature}
             </li>
           );

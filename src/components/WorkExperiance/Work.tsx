@@ -1,5 +1,5 @@
 import { m } from "framer-motion";
-import { RefObject, useRef } from "react";
+import { RefObject, useRef, useState } from "react";
 import WorkExperienceCard from "./WorkExperienceCard";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -36,7 +36,7 @@ const work = [
   {
     name: "#GoBeyond",
     title: "Software Engineer Intern",
-    date: "Jan 2023 - Present",
+    date: "Jan 2023 - Jul 2023",
     achievements: [
       "Refactored Express backend logic into various middlewares, making it more scalable and maintainable",
       "Aid in Typescript migration by adding types for all React API calls, ensuring data integrity",
@@ -68,26 +68,90 @@ function Work({ workRef }: { workRef: RefObject<HTMLDivElement> | null }) {
     slidesToScroll: 1,
     draggable: true,
   };
+  const [selectedCard, setSelectedCard] = useState(0);
+  const workCardRef = useRef<HTMLDivElement | null>(null);
 
   return (
     <div className="mt-60 relative">
       <div ref={workRef} className="text-4xl mb-10 font-bold ">
         Work Experiance
       </div>
-
-      <div className="px-4 h-full border">
-        <Slider {...settings} ref={sliderRef}>
-          {work.map((experience, index) => (
-            <m.div
-              key={index}
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              className=" border-2 border-gray-200 rounded-xl p-5 min-h-full flex"
+      <div className="flex flex-col md:flex-row md:gap-10 md:pl-10">
+        <ol className="relative border-s border-gray-500">
+          {work.map((val, idx) => (
+            <li
+              className={`mb-10 ms-4 p-2 transition-colors ${selectedCard === idx && " bg-gray-700 rounded-md"}`}
             >
-              <WorkExperienceCard experience={experience} />
-            </m.div>
+              <div className="absolute w-3 h-3  rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 bg-sky-500"></div>
+              <time className="mb-1 text-sm font-normal leading-none text-gray-500">
+                {val.date}
+              </time>
+              <div className="flex gap-2 items-center">
+                <h3 className="md:text-lg font-semibold text-white">
+                  {val.name}
+                </h3>
+                {idx === 0 && (
+                  <span className="bg-sky-100 text-sky-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded-sm  ms-3">
+                    Present
+                  </span>
+                )}
+              </div>
+              <p className="mb-4 text-sm md:text-base font-normal text-gray-200">
+                {val.title}
+              </p>
+              <button
+                className="hidden md:inline-flex items-center px-4 py-2 text-sm font-medium text-gray-200 bg-gray-800 border border-gray-600 rounded-lg "
+                onClick={() => {
+                  setSelectedCard(idx);
+                }}
+              >
+                Learn more
+                <svg
+                  className="w-3 h-3 ms-2 rtl:rotate-180"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 14 10"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M1 5h12m0 0L9 1m4 4L9 9"
+                  />
+                </svg>
+              </button>
+              <button
+                className="md:hidden inline-flex items-center px-4 py-2 text-sm font-medium text-gray-200 bg-gray-800 border border-gray-600 rounded-lg "
+                onClick={() => {
+                  setSelectedCard(idx);
+                  workCardRef.current?.scrollIntoView({ behavior: "smooth" });
+                }}
+              >
+                Learn more
+                <svg
+                  className="w-3 h-3 ms-2 rtl:rotate-180"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 14 10"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M1 5h12m0 0L9 1m4 4L9 9"
+                  />
+                </svg>
+              </button>
+            </li>
           ))}
-        </Slider>
+        </ol>
+        <div ref={workCardRef} className="pt-16 md:pt-0">
+          <WorkExperienceCard experience={work[selectedCard]} />
+        </div>
       </div>
     </div>
   );
