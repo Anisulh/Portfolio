@@ -1,10 +1,8 @@
 import { Iexperience } from "../../types";
 
-
-
 function WorkExperienceCard({ experience }: { experience: Iexperience }) {
   return (
-    <div>
+    <div className="h-full flex-1">
       <div className="flex justify-between">
         <div>
           <h3 className="text-xl font-medium">{experience.name}</h3>

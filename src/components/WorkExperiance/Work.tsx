@@ -2,33 +2,56 @@ import { m } from "framer-motion";
 import { RefObject, useRef } from "react";
 import WorkExperienceCard from "./WorkExperienceCard";
 import Slider from "react-slick";
-import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const work = [
   {
-    name: "GoBeyond",
+    name: "BlueFairy (spun off from #GoBeyond)",
+    title: "Software Engineer / Team Lead",
+    date: "Jun 2024 - Present",
+    achievements: [
+      "Transferred to the new company based on exceptional performance and contributions.",
+      "Lead a team of 3 to build the MVP web and mobile app, resulting in a $1.1+ million seed round raise.",
+      "Created a JSON-based dynamic form generator that creates multi-step, user-friendly forms with intuitive navigation, supporting complex nested fields.",
+      "Implemented the ranking of users in the early access waitlist based on referral count.",
+      "Migrated application infrastructure from heroku to GCP, reducing operational costs by 30% and improving deployment speed via CI/CD pipelines.",
+      "Implemented security measures compliant with standards such as HIPAA, OWASP, and others.",
+    ],
+  },
+
+  {
+    name: "#GoBeyond",
     title: "Software Engineer",
+    date: "Jul 2023 - Jun 2024",
+    achievements: [
+      "Developed a custom React UI component library, creating a consistent and gamified experience.",
+      "Centralized error handling on the backend, making errors more consistent and reliable.",
+      "Reduced recurrent page load times and api calls, up to 80%, by caching the data on the client.",
+      "Created 100+ Jest tests and automated it with Github Actions to ensure code integrity on the backend.",
+      "Transformed client-side styling from CSS to Tailwind CSS and used Figma, resulting in a more efficient and modern user interface and user experience (UI/UX).",
+    ],
+  },
+
+  {
+    name: "#GoBeyond",
+    title: "Software Engineer Intern",
     date: "Jan 2023 - Present",
     achievements: [
-      "Enhanced frontend performance of React.js applications by 40+% through image optimization and implementation of lazy loading techniques.",
-      "Transformed client-side styling from CSS to Tailwind CSS and used Figma, resulting in a more efficient and modern user interface and user experience (UI/UX).",
-      "Led the design and execution of data pipelines to train machine learning Tensorflow models, optimizing data preprocessing.",
-      "Managed a team of interns in Selenium-based data collection, emphasizing data quality and integrity using Python.",
-      "Orchestrated the migration of legacy infrastructure from Heroku to AWS with Terraform, improving scalability and system reliability.",
-      "Developed and maintained over 50 functional tests for Express.js server using Jest, ensuring robust backend performance.",
+      "Refactored Express backend logic into various middlewares, making it more scalable and maintainable",
+      "Aid in Typescript migration by adding types for all React API calls, ensuring data integrity",
+      "Added logging to all backend endpoints and functions to improve error and bottleneck detection",
+      "Developed automation funnels between spreadsheets, google calendar and gmail using Zapier",
     ],
   },
   {
     name: "United Tech",
-    title: "Fullstack Consultant",
-    date: "Jan 2023 - Mar 2023",
+    title: "Fullstack Consultant (Part-time)",
+    date: "Jul 2022 - Dec 2022",
     achievements: [
-      "Spearheaded the development of a full stack Angular.js and Spring Boot based video conferencing and chat platform, enhancing remote communication.",
+      "Collaborated with a team of 3 to develop a web application for a local business, enhancing their online presence and customer engagement.",
       "Facilitated cryptocurrency transactions in a project environment using Coinbase Cloud, integrating over 30+ cryptocurrencies.",
       "Implemented high-security authentication mechanisms using Google OAuth and OpenID Connect, reinforcing user data protection.",
-      "Directed a team in the creation of scalable microservices, contributing to a robust and modular application architecture.",
       "Authored extensive technical documentation, streamlining knowledge transfer and maintenance processes.",
       "Automated testing and routine tasks using Selenium, redirecting focus towards feature development and enhancements",
     ],
@@ -45,12 +68,6 @@ function Work({ workRef }: { workRef: RefObject<HTMLDivElement> | null }) {
     slidesToScroll: 1,
     draggable: true,
   };
-  const onSlideNext = () => {
-    sliderRef.current?.slickNext();
-  };
-  const onSlidePrev = () => {
-    sliderRef.current?.slickPrev();
-  };
 
   return (
     <div className="mt-60 relative">
@@ -58,14 +75,14 @@ function Work({ workRef }: { workRef: RefObject<HTMLDivElement> | null }) {
         Work Experiance
       </div>
 
-      <div className="px-4">
+      <div className="px-4 h-full border">
         <Slider {...settings} ref={sliderRef}>
           {work.map((experience, index) => (
             <m.div
               key={index}
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              className="mb-14 border-2 border-gray-200 rounded-xl p-5 min-h-fit"
+              className=" border-2 border-gray-200 rounded-xl p-5 min-h-full flex"
             >
               <WorkExperienceCard experience={experience} />
             </m.div>
@@ -75,33 +92,5 @@ function Work({ workRef }: { workRef: RefObject<HTMLDivElement> | null }) {
     </div>
   );
 }
-
-const NextArrow = ({
-  onClick,
-  className = "",
-}: {
-  onClick: () => void;
-  className?: string;
-}) => {
-  return (
-    <button type="button" onClick={onClick} className={className}>
-      <ChevronRightIcon className="h-5" />
-    </button>
-  );
-};
-
-const PrevArrow = ({
-  onClick,
-  className = "",
-}: {
-  onClick: () => void;
-  className?: string;
-}) => {
-  return (
-    <button type="button" onClick={onClick} className={className}>
-      <ChevronLeftIcon className="h-5" />
-    </button>
-  );
-};
 
 export default Work;
