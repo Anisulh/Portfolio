@@ -7,7 +7,14 @@ function ProjectCard({ project }: { project: Iproject }) {
   return (
     <div className="flex md:gap-10">
       <div className="w-full">
-        <h3 className="text-xl font-medium mb-5">{project.name}</h3>
+        <div className="flex gap-2 items-center  mb-5">
+          <h3 className="text-xl font-medium">{project.name}</h3>
+          {project.inProgress && (
+            <span className="bg-yellow-100 text-yellow-700 text-sm font-medium me-2 px-2.5 py-0.5 rounded-sm  ms-3">
+              In Progress
+            </span>
+          )}
+        </div>
         <p className="pb-2 text-gray-300 ">{project.description}</p>
         <div className=" inline-flex py-6 w-full justify-center gap-10 ">
           {project.github && (
@@ -51,16 +58,18 @@ function ProjectCard({ project }: { project: Iproject }) {
         <div className="flex justify-center items-center md:hidden">
           {project.image}
         </div>
-        <h4 className="font-medium text-lg">Features</h4>
-        <ul className="list-disc pl-10 pb-6">
-          {project?.features.map((feature, index) => {
-            return (
-              <li key={index} className=" text-gray-300  pb-2">
-                {feature}
-              </li>
-            );
-          })}
-        </ul>
+        <div className="hidden md:block">
+          <h4 className="font-medium text-lg">Features</h4>
+          <ul className="list-disc pl-10 pb-6">
+            {project?.features.map((feature, index) => {
+              return (
+                <li key={index} className=" text-gray-300  pb-2">
+                  {feature}
+                </li>
+              );
+            })}
+          </ul>
+        </div>
         <div>
           <h4 className="font-medium text-lg">Built With:</h4>
           <p className="md:pl-10 pb-2 text-gray-300 ">{project.builtWith}</p>

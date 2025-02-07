@@ -6,6 +6,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import ClothingsSectionsPixel8Mock from "../../images/ClothingSectionsPixel8Mock.webp";
+import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 
 const projects: Iproject[] = [
   {
@@ -26,7 +27,7 @@ const projects: Iproject[] = [
       <img
         width={2432}
         height={1442}
-        className="w-[48rem] max-w-xs rounded-xl  sm:w-[57rem] md:-ml-4 lg:-ml-0 py-4 px-2"
+        className="w-[48rem] max-w-xs rounded-xl  sm:w-[57rem] md:-ml-4 lg:-ml-0 py-4 px-12"
         src={ClothingsSectionsPixel8Mock}
       />
     ),
@@ -44,7 +45,14 @@ const projects: Iproject[] = [
     builtWith: "Python, Django, JavaScript, React, MySQL, Redis",
     github: "https://github.com/Anisulh/ArcLight-Music",
     demo: "https://arclight-music-production.up.railway.app/",
-    image: "",
+    image: (
+      <img
+        width={2432}
+        height={1442}
+        className="w-[48rem] max-w-xs rounded-xl  sm:w-[57rem] md:-ml-4 lg:-ml-0 py-4 px-12"
+        src={"https://placehold.co/200x430"}
+      />
+    ),
   },
   {
     name: "Newsly",
@@ -57,9 +65,46 @@ const projects: Iproject[] = [
     ],
     builtWith: "HTMX, Templ, Go, Fiber, Kafka, and Postgres",
     github: "https://github.com/Anisulh/ArcLight-Music",
-    image: "",
+    image: (
+      <img
+        width={2432}
+        height={1442}
+        className="w-[48rem] max-w-xs rounded-xl  sm:w-[57rem] md:-ml-4 lg:-ml-0 py-4 px-12"
+        src={"https://placehold.co/200x430"}
+      />
+    ),
+
+    inProgress: true,
   },
 ];
+
+// Custom Previous Arrow component
+const PrevArrow = (props: any) => {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={`${className} absolute left-0 z-10 cursor-pointer`}
+      style={{ ...style, display: "block" }}
+      onClick={onClick}
+    >
+      <ChevronLeftIcon className="size-6 stroke-2 text-gray-200 " />
+    </div>
+  );
+};
+
+// Custom Next Arrow component
+const NextArrow = (props: any) => {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={`${className} absolute right-0 z-10 cursor-pointer`}
+      style={{ ...style, display: "block" }}
+      onClick={onClick}
+    >
+      <ChevronRightIcon className="size-6 stroke-2 text-gray-200" />
+    </div>
+  );
+};
 function Projects({
   projectsRef,
 }: {
@@ -67,19 +112,41 @@ function Projects({
 }) {
   const sliderRef = useRef<Slider | null>(null);
   const settings = {
-    dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
     draggable: true,
+    arrows: false,
+    appendDots: (dots: React.ReactNode) => (
+      <div>
+        <ul> {dots} </ul>
+      </div>
+    ),
+    customPaging: (i: number) => (
+      <div className="w-2 h-2 rounded-full bg-gray-200" />
+    ),
+    dots: true,
+    dotsClass: "slick-dots",
   };
   return (
     <div className="mt-40">
-      <div ref={projectsRef} className="text-4xl mb-10 font-bold ">
+      <div ref={projectsRef} className="text-2xl md:text-4xl mb-10 font-bold ">
         Featured Projects
       </div>
-      <div className="px-4">
+      <div className="p-4 border-2 border-gray-200 relative w-full  rounded-xl">
+        <button
+          className="absolute left-0 top-[50%]"
+          onClick={() => sliderRef?.current?.slickPrev()}
+        >
+          <PrevArrow />
+        </button>
+        <button
+          className="absolute right-0 top-[50%]"
+          onClick={() => sliderRef?.current?.slickNext()}
+        >
+          <NextArrow />
+        </button>
         <Slider {...settings} ref={sliderRef}>
           {projects.map((project, index) => {
             return (
@@ -87,7 +154,7 @@ function Projects({
                 key={index}
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
-                className="mb-14 border-2 border-gray-200 rounded-xl p-4 h-full"
+                className="mb-14 p-4 h-full"
               >
                 <ProjectCard project={project} />
               </m.div>
