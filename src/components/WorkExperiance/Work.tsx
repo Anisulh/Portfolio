@@ -65,7 +65,7 @@ function Work({ workRef }: { workRef: RefObject<HTMLDivElement> | null }) {
   return (
     <div className="mt-60 relative">
       <div ref={workRef} className="text-2xl md:text-4xl mb-10 font-bold ">
-        Work Experiance
+        Work Experience
       </div>
       <div className="flex flex-col md:flex-row md:gap-10 pl-2 md:pl-10">
         <ol className="relative border-s border-gray-500">
