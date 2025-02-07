@@ -6,6 +6,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import ClothingsSectionsPixel8Mock from "../../images/ClothingSectionsPixel8Mock.webp";
+import ArcLightPixel8Mock from "../../images/landingMobile-portrait.png";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 
 const projects: Iproject[] = [
@@ -35,7 +36,7 @@ const projects: Iproject[] = [
   {
     name: "ArcLight Music Sharing",
     description:
-      "A full-stack music-sharing application that allows users to join a room using a unique code and listen synchronously.",
+      "A music-sharing application that allows users to join a room using a unique code and listen synchronously using their spotify account.",
     features: [
       "Utilized Spotify API to allow users to choose and play the music that they want to share.",
       "Created a REST API using Django to handle client and Spotify API requests",
@@ -50,7 +51,7 @@ const projects: Iproject[] = [
         width={2432}
         height={1442}
         className="w-[48rem] max-w-xs rounded-xl  sm:w-[57rem] md:-ml-4 lg:-ml-0 py-4 px-12"
-        src={"https://placehold.co/200x430"}
+        src={ArcLightPixel8Mock}
       />
     ),
   },
