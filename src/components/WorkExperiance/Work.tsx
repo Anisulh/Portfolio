@@ -38,10 +38,10 @@ const work = [
     title: "Software Engineer Intern",
     date: "Jan 2023 - Jul 2023",
     achievements: [
-      "Refactored Express backend logic into various middlewares, making it more scalable and maintainable",
-      "Aid in Typescript migration by adding types for all React API calls, ensuring data integrity",
-      "Added logging to all backend endpoints and functions to improve error and bottleneck detection",
-      "Developed automation funnels between spreadsheets, google calendar and gmail using Zapier",
+      "Refactored Express backend logic into various middlewares, making it more scalable and maintainable.",
+      "Aid in Typescript migration by adding types for all React API calls, ensuring data integrity.",
+      "Added logging to all backend endpoints and functions to improve error and bottleneck detection.",
+      "Developed automation funnels between spreadsheets, google calendar and gmail using Zapier.",
     ],
   },
   {
@@ -51,39 +51,30 @@ const work = [
     achievements: [
       "Collaborated with a team of 3 to develop a web application for a local business, enhancing their online presence and customer engagement.",
       "Facilitated cryptocurrency transactions in a project environment using Coinbase Cloud, integrating over 30+ cryptocurrencies.",
-      "Implemented high-security authentication mechanisms using Google OAuth and OpenID Connect, reinforcing user data protection.",
-      "Authored extensive technical documentation, streamlining knowledge transfer and maintenance processes.",
-      "Automated testing and routine tasks using Selenium, redirecting focus towards feature development and enhancements",
+      "Implemented authentication mechanisms using Google OAuth and OpenID Connect, reinforcing user data protection.",
+      "Authored technical documentation, streamlining knowledge transfer and maintenance processes.",
+      "Automated testing and routine tasks using Selenium, redirecting focus towards feature development.",
     ],
   },
 ];
 
 function Work({ workRef }: { workRef: RefObject<HTMLDivElement> | null }) {
-  const sliderRef = useRef<Slider | null>(null);
-  const settings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    draggable: true,
-  };
   const [selectedCard, setSelectedCard] = useState(0);
   const workCardRef = useRef<HTMLDivElement | null>(null);
 
   return (
     <div className="mt-60 relative">
-      <div ref={workRef} className="text-4xl mb-10 font-bold ">
+      <div ref={workRef} className="text-2xl md:text-4xl mb-10 font-bold ">
         Work Experiance
       </div>
-      <div className="flex flex-col md:flex-row md:gap-10 md:pl-10">
+      <div className="flex flex-col md:flex-row md:gap-10 pl-2 md:pl-10">
         <ol className="relative border-s border-gray-500">
           {work.map((val, idx) => (
             <li
               className={`mb-10 ms-4 p-2 transition-colors ${selectedCard === idx && " bg-gray-700 rounded-md"}`}
             >
               <div className="absolute w-3 h-3  rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 bg-sky-500"></div>
-              <time className="mb-1 text-sm font-normal leading-none text-gray-500">
+              <time className="mb-1 text-sm font-normal leading-none text-gray-400">
                 {val.date}
               </time>
               <div className="flex gap-2 items-center">
@@ -91,7 +82,7 @@ function Work({ workRef }: { workRef: RefObject<HTMLDivElement> | null }) {
                   {val.name}
                 </h3>
                 {idx === 0 && (
-                  <span className="bg-sky-100 text-sky-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded-sm  ms-3">
+                  <span className="bg-sky-100 text-sky-700 text-sm font-medium me-2 px-2.5 py-0.5 rounded-sm  ms-3">
                     Present
                   </span>
                 )}
