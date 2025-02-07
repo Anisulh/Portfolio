@@ -73,3 +73,7 @@ body {
   background-size: 100% 3px;
   background-position: 0 100%;
 }
+
+.slick-dots li.slick-active > div {
+  background-color: #0ea5e9; /* Tailwind's sky-400 color */
+}
