@@ -15,5 +15,5 @@ export interface Iproject {
   github: string;
   image: ReactNode;
   demo?: string;
+  inProgress?: boolean;
 }
-

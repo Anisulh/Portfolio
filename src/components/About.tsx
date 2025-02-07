@@ -13,7 +13,7 @@ function About({ aboutRef }: aboutProps) {
       whileInView={{ opacity: 1 }}
     >
       <div ref={aboutRef}>
-        <h4 className="text-3xl  mb-10 font-bold ">About</h4>
+        <h4 className="text-2xl md:text-4xl  mb-10 font-bold ">About</h4>
         <div className="text-gray-300 ">
           <p className="md:text-lg mb-5">
             My name is Anisul Haque, I’m a mid-level software engineer

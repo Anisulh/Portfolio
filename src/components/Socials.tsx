@@ -3,11 +3,11 @@ import { m } from "framer-motion";
 
 function Socials() {
   return (
-    <div className="fixed sm:left-10 bottom-10 right-10 flex w-fit  sm:block">
+    <div className="fixed sm:left-10 bottom-10 right-10 flex w-fit z-50  sm:block">
       <m.button
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
-        className="sm:mb-10 block mr-5 sm:mr-0"
+        className="sm:mb-10 block mr-5 sm:mr-0 z-20"
       >
         <a
           target="_blank"
@@ -20,7 +20,7 @@ function Socials() {
       <m.button
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
-        className="sm:mb-10 block"
+        className="sm:mb-10 block z-20"
       >
         <a
           target="_blank"

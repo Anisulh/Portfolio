@@ -21,7 +21,7 @@ function Hero({ workRef, contactRef, homeRef }: workProps) {
             Full-Stack Engineer who enjoys all aspects of the development
             process, from desgining to deployment.
           </p>
-          <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
+          <div className="mt-10 flex flex-col justify-center gap-2 md:flex-row lg:justify-start">
             <m.button
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
