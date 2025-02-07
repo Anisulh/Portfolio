@@ -45,7 +45,7 @@ const projects: Iproject[] = [
     ],
     builtWith: "Python, Django, JavaScript, React, MySQL, Redis",
     github: "https://github.com/Anisulh/ArcLight-Music",
-    demo: "https://arclight-music-production.up.railway.app/",
+    demo: "https://arclight-music.onrender.com/",
     image: (
       <img
         width={2432}
