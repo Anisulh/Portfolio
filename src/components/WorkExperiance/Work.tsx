@@ -61,6 +61,25 @@ const work = [
 function Work({ workRef }: { workRef: RefObject<HTMLDivElement> | null }) {
   const [selectedCard, setSelectedCard] = useState(0);
   const workCardRef = useRef<HTMLDivElement | null>(null);
+  const sliderRef = useRef<Slider | null>(null);
+  const settings = {
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    draggable: true,
+    arrows: false,
+    appendDots: (dots: React.ReactNode) => (
+      <div>
+        <ul> {dots} </ul>
+      </div>
+    ),
+    customPaging: (i: number) => (
+      <div className="w-2 h-2 rounded-full bg-gray-200" />
+    ),
+    dots: true,
+    dotsClass: "slick-dots",
+  };
 
   return (
     <div className="mt-60 relative">
@@ -117,6 +136,7 @@ function Work({ workRef }: { workRef: RefObject<HTMLDivElement> | null }) {
                 className="md:hidden inline-flex items-center px-4 py-2 text-sm font-medium text-gray-200 bg-gray-800 border border-gray-600 rounded-lg "
                 onClick={() => {
                   setSelectedCard(idx);
+                  sliderRef.current?.slickGoTo(idx);
                   workCardRef.current?.scrollIntoView({ behavior: "smooth" });
                 }}
               >
@@ -141,7 +161,30 @@ function Work({ workRef }: { workRef: RefObject<HTMLDivElement> | null }) {
           ))}
         </ol>
         <div ref={workCardRef} className="pt-16 md:pt-0">
-          <WorkExperienceCard experience={work[selectedCard]} />
+          <Slider
+            {...settings}
+            ref={sliderRef}
+            onSwipe={(swipeDirection) => {
+              if (swipeDirection === "left") {
+                setSelectedCard(selectedCard + 1);
+              } else if (swipeDirection === "right") {
+                setSelectedCard(selectedCard - 1);
+              }
+            }}
+          >
+            {work.map((experience, index) => {
+              return (
+                <m.div
+                  key={index}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  className="mb-14 p-4 h-full"
+                >
+                  <WorkExperienceCard experience={experience} />
+                </m.div>
+              );
+            })}
+          </Slider>
         </div>
       </div>
     </div>
