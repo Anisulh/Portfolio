@@ -19,12 +19,12 @@ function Skills({ skillsRef }: skillProps) {
         </p>
         <h5 className="font-medium md:text-lg">Frameworks:</h5>
         <p className=" text-gray-300 pl-6 md:text-base text-sm pb-2">
-          React, Express.js, Django, Flask, Tailwind CSS, Node.js, React Native,
-          HTMX
+          React, Express.js, Django, Flask, Fiber, Tailwind CSS, Node.js, React
+          Native, HTMX
         </p>
         <h5 className="font-medium md:text-lg">Testing:</h5>
         <p className=" text-gray-300 pl-6 md:text-base text-sm pb-2">
-          Jest, SuperTest, React Testing Library
+          Jest, SuperTest, React Testing Library, Pytest
         </p>
         <h5 className="font-medium md:text-lg">Databases:</h5>
         <p className=" text-gray-300 pl-6 md:text-base text-sm pb-2">
@@ -32,8 +32,8 @@ function Skills({ skillsRef }: skillProps) {
         </p>
         <h5 className="font-medium md:text-lg">Software / Tools:</h5>
         <p className=" text-gray-300 pl-6 md:text-base text-sm pb-2">
-          GCP, Docker, Jest, GitHub, Git, Postman, Redux, Figma, Node.js, Linux,
-          Expo / EAS
+          GCP, Docker, Jest, GitHub Actions, Git, Postman, Redux, Figma,
+          Node.js, Linux, Expo / EAS, Heroku
         </p>
         <h5 className="font-medium md:text-lg">Languages</h5>
         <p className=" text-gray-300 pl-6 md:text-base text-sm pb-2">
