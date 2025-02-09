@@ -36,7 +36,7 @@ export default function Navigation({
           <div className="flex shrink-0 grow items-center lg:grow-0">
             <div className="flex w-full items-center justify-between md:w-auto">
               <a
-                className="cursor-pointer border-2 rounded-lg p-3 text-white border-sky-400 flex items-center hover:bg-white hover:text-sky-500 transition-colors"
+                className="cursor-pointer border-2 rounded-lg p-1.5 size-10 text-white border-sky-400 flex items-center hover:bg-white hover:text-sky-500 transition-colors"
                 onClick={() => homeRef?.current?.scrollIntoView()}
               >
                 <span className="sr-only">Anisul Haque's Profolio</span>
