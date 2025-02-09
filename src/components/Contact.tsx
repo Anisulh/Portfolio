@@ -29,7 +29,7 @@ function Contact({ contactRef }: contactProps) {
           import.meta.env.VITE_SERVICE_ID,
           import.meta.env.VITE_TEMPLATE_ID,
           form.current,
-          import.meta.env.VITE_PUBLIC_KEY
+          import.meta.env.VITE_PUBLIC_KEY,
         );
         setOpen(true);
         console.log(result);
@@ -46,14 +46,14 @@ function Contact({ contactRef }: contactProps) {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
     >
-      <div ref={contactRef} >
+      <div ref={contactRef}>
         <h4 className="text-3xl mb-10 font-bold">Contact</h4>
         <form ref={form} onSubmit={onFormSubmit} className="max-w-2xl">
           <div>
             <input
               type="text"
               name="user_name"
-              className="border rounded-md bg-gray-100 text-gray-900 text-lg w-full mb-5 py-1 px-5"
+              className="border rounded-md bg-gray-100 text-gray-900 text-sm md:text-base w-full mb-5 py-1 px-5"
               placeholder="Name"
             />
           </div>
@@ -63,14 +63,14 @@ function Contact({ contactRef }: contactProps) {
               name="user_email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="border rounded-md bg-gray-100 text-gray-900 text-lg w-full mb-5 py-1 px-5"
+              className="border rounded-md bg-gray-100 text-gray-900 text-sm md:text-base w-full mb-5 py-1 px-5"
               placeholder="Email"
             />
           </div>
           <div>
             <textarea
               name="message"
-              className="border rounded-md bg-gray-100 text-gray-900 text-lg w-full mb-5 py-1 px-5"
+              className="border rounded-md bg-gray-100 text-gray-900 text-sm md:text-base w-full mb-5 py-1 px-5"
               placeholder="Message"
             ></textarea>
           </div>
