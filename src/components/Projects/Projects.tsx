@@ -36,7 +36,7 @@ const projects: Iproject[] = [
   {
     name: "ArcLight Music Sharing",
     description:
-      "A music-sharing application that allows users to join a room using a unique code and listen synchronously using their spotify account.(this is before spotify jam session was popularized)",
+      "A music-sharing application that allows users to join a room using a unique code and listen synchronously using their spotify account. (Created before spotify jam session was popularized)",
     features: [
       "Utilized Spotify API to allow users to choose and play the music that they want to share.",
       "Created a REST API using Django to handle client and Spotify API requests",
