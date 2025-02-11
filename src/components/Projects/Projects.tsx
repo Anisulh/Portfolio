@@ -65,7 +65,8 @@ const projects: Iproject[] = [
       "Secured application with JWT and httpOnly cookies, achieving OWASP Top 10 compliance",
     ],
     builtWith: "HTMX, Templ, Go, Fiber, Kafka, and Postgres",
-    github: "https://github.com/Anisulh/ArcLight-Music",
+    github: "https://github.com/Anisulh/Newsly",
+demo: "https://newsly-1k84.onrender.com/",
     image: (
       <img
         width={2432}
